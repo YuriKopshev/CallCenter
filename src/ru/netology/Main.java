@@ -39,12 +39,10 @@ public class Main {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    if (queue.peek() != null) {
-                        int call = queue.poll();
-                        System.out.println("ОПЕРАТОР 1: Звонок от абонента № " + call + " отработан!");
-                    } else {
-                        break;
+                    while (queue.peek() != null) {
+                        System.out.println("ОПЕРАТОР 1: Звонок от абонента № " + queue.poll() + " отработан!");
                     }
+                    break;
                 }
             }
         }).start();
@@ -58,12 +56,11 @@ public class Main {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    if (queue.peek() != null) {
-                        int call = queue.poll();
-                        System.out.println("ОПЕРАТОР 2: Звонок от абонента № " + call + " отработан!");
-                    } else {
-                        break;
+                    while (queue.peek() != null) {
+                        System.out.println("ОПЕРАТОР 2: Звонок от абонента № " + queue.poll() + " отработан!");
                     }
+                    break;
+
                 }
             }
         }).start();
@@ -77,12 +74,11 @@ public class Main {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    if (queue.peek() != null) {
-                        int call = queue.poll();
-                        System.out.println("ОПЕРАТОР 3: Звонок от абонента № " + call + " отработан!");
-                    } else {
-                        break;
+                    while (queue.peek() != null) {
+                        System.out.println("ОПЕРАТОР 3: Звонок от абонента № " + queue.poll() + " отработан!");
                     }
+                    break;
+
                 }
             }
         }).start();
