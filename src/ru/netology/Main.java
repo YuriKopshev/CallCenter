@@ -33,14 +33,15 @@ public class Main {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                Integer call;
                 while (true) {
                     try {
                         Thread.sleep(OPERATORPAUSE);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    while (queue.peek() != null) {
-                        System.out.println("ОПЕРАТОР 1: Звонок от абонента № " + queue.poll() + " отработан!");
+                    while ((call = queue.poll()) != null) {
+                        System.out.println("ОПЕРАТОР 1: Звонок от абонента № " + call + " отработан!");
                     }
                     break;
                 }
@@ -50,14 +51,15 @@ public class Main {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                Integer call;
                 while (true) {
                     try {
                         Thread.sleep(OPERATORPAUSE);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    while (queue.peek() != null) {
-                        System.out.println("ОПЕРАТОР 2: Звонок от абонента № " + queue.poll() + " отработан!");
+                    while ((call = queue.poll()) != null) {
+                        System.out.println("ОПЕРАТОР 2: Звонок от абонента № " + call + " отработан!");
                     }
                     break;
 
@@ -68,17 +70,17 @@ public class Main {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                Integer call;
                 while (true) {
                     try {
                         Thread.sleep(OPERATORPAUSE);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    while (queue.peek() != null) {
-                        System.out.println("ОПЕРАТОР 3: Звонок от абонента № " + queue.poll() + " отработан!");
+                    while ((call = queue.poll()) != null) {
+                        System.out.println("ОПЕРАТОР 3: Звонок от абонента № " + call + " отработан!");
                     }
                     break;
-
                 }
             }
         }).start();
